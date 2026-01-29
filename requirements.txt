@@ -1,0 +1,5 @@
+pyTelegramBotAPI~=4.30.0
+easyocr~=1.7.2
+stanza~=1.11.0
+python-dotenv~=1.2.1
+deep-translator~=1.11.4

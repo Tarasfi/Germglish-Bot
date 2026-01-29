@@ -1,7 +1,6 @@
 .venv/
 .env
 env
-
 .idea/
 .vscode/
 

@@ -20,7 +20,7 @@ modal_verbs = {"können", "dürfen", "müssen", "wollen", "sollen", "mögen", "s
 
 
 # OCR initialisation
-reader = easyocr.Reader(['de'])
+reader = easyocr.Reader(['de'], gpu=False)
 
 
 @bot.message_handler(commands=['start'])
@@ -63,6 +63,7 @@ def main(message):
                 unique_verbs.add(cleaned)
 
     bot.edit_message_text(chat_id=message.chat.id, message_id=msg.message_id, text="Translating...🈳")
+
     #Translating using deep_translator
     verbs_list = list(unique_verbs)
     translations = GoogleTranslator(source='de', target='en').translate_batch(verbs_list)
@@ -83,3 +84,4 @@ def main(message):
 
 
 bot.polling(none_stop=True)
+
